@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  color: white;
+  margin-top: 200px;
+  text-align: center;
+  background-image: url('https://github.com/AcmonCercopes/TogetherCountDown/blob/master/us.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%
+}
+
+#clock {
+  font-weight: 300;
+  font-size: 100px;
+}
