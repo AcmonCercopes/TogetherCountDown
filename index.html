@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reunite Again <3</title>
+  <style>
+  body {
+  font-family: sans-serif;
+  color: white;
+  margin-top: 200px;
+  text-align: center;
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%
+}
+
+#clock {
+  font-weight: 300;
+  font-size: 100px;
+}
+</style>
+</head>
+<body>
+  <h1 id="clock"></h1>
+  <script>
+  /* This should be in a folder named `js` */
+  var clock = document.getElementById('clock');
+
+  function hexClock() {
+
+    var time = new Date("Oct 2, 2017 12:00:00");
+    var now = new Date();
+    var distance = time.getTime() - now.getTime();
+    var days = Math.floor(distance / (24 * 60 * 60 * 1000));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    if (hours.length < 2) {
+      hours = '0' + hours;
+    }
+
+    if (minutes.length < 2) {
+      minutes = '0' + minutes;
+    }
+
+    if (seconds.length < 2) {
+      seconds = '0' + seconds;
+    }
+
+    var clockStr = days + ' : ' + hours + ' : ' + minutes + ' : ' + seconds;
+
+    clock.textContent = clockStr;
+  }
+
+  hexClock();
+  setInterval(hexClock, 1000);
+  </script>
+</body>
+</html>
